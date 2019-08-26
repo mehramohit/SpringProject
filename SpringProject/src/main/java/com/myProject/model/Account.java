@@ -8,7 +8,7 @@ public class Account implements Serializable{
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private String address;
+	private Address address;
 	
 	public String getUserName() {
 		return userName;
@@ -29,10 +29,10 @@ public class Account implements Serializable{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	

@@ -41,5 +41,11 @@ public class Address {
 		this.postalCode = postalCode;
 	}
 	
+	@Override
+	public String toString() {
+		return "Address [unitNumber=" + unitNumber + ", streetAddress=" + streetAddress + ", city=" + city
+				+ ", province=" + province + ", postalCode=" + postalCode + "]";
+	}
+	
 	
 }
