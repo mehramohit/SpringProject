@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Account implements Serializable{
  
-	private long id;
+	
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private Address address;
+	private String address;
 	
 	public String getUserName() {
 		return userName;
@@ -25,15 +25,20 @@ public class Account implements Serializable{
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Account [userName=" + userName + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
+				+ address + "]";
+	}
 }

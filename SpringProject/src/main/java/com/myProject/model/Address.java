@@ -9,6 +9,7 @@ public class Address {
 	private String city;
 	private Province province;
 	private String postalCode;
+	
 	public int getUnitNumber() {
 		return unitNumber;
 	}

@@ -3,8 +3,11 @@ package com.myProject.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myProject.controller.service.ProjectControllerService;
@@ -17,7 +20,18 @@ public class ProjectController {
 	private ProjectControllerService pcService;
 	
 	@RequestMapping("/AddUser")
-	public String addUser(@Valid @RequestBody Account input) {
+	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE})
+	public String addUser(@RequestBody Account input) {
+		System.out.println(input.getFirstName());
+		System.out.println(input.getLastName());
+		System.out.println(input.getUserName());
+		System.out.println(input.getAddress());
+		
 		return pcService.addUser(input);
+	}
+	
+	@RequestMapping("/findUserById")
+	public String findUserById(@RequestParam int id) {
+		return pcService.findUserById(id);
 	}
 }

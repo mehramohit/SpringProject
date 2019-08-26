@@ -15,10 +15,20 @@ public class ProjectControllerService {
 	
 	public String addUser(Account input) {
 		if(input != null) {
-			accountHash.put(rand.nextInt(), input);
-			return "Account Added";
+			int id = Math.abs(rand.nextInt());
+			accountHash.put(id, input);
+			return "Account Added with id:" + id;
 		}
 		else
 			return "Input invalid";
+	}
+	
+	public String findUserById(int id) {
+		Account a = accountHash.get(id);
+		if(a == null) {
+			return "User not found, check id";
+		}
+		else
+			return a.toString();
 	}
 }
