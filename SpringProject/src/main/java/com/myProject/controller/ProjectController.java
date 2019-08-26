@@ -22,11 +22,6 @@ public class ProjectController {
 	@RequestMapping("/AddUser")
 	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE})
 	public String addUser(@RequestBody Account input) {
-		System.out.println(input.getFirstName());
-		System.out.println(input.getLastName());
-		System.out.println(input.getUserName());
-		System.out.println(input.getAddress());
-		
 		return pcService.addUser(input);
 	}
 	
