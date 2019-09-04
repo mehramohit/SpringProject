@@ -27,4 +27,10 @@ public class ProjectController {
 	public String findUserById(@RequestParam int id) {
 		return pcService.findUserById(id);
 	}
+	
+	@RequestMapping("/updateUserAccount")
+	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE})
+	public String updateUserAccount(@RequestBody Account input) {
+		return pcService.updateUserAccountByInfo(input);
+	}
 }
