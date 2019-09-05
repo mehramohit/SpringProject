@@ -10,35 +10,54 @@ public class Address {
 	private Province province;
 	private String postalCode;
 	
+	public Address() {
+	}
+	
+	public Address(int unitNumber, String streetAddress, String city, Province province, String postalCode) {
+		super();
+		this.unitNumber = unitNumber;
+		this.streetAddress = streetAddress;
+		this.city = city;
+		this.province = province;
+		this.postalCode = postalCode;
+	}
+
+
+
 	public int getUnitNumber() {
 		return unitNumber;
 	}
-	public void setUnitNumber(int unitNumber) {
+	public Address setUnitNumber(int unitNumber) {
 		this.unitNumber = unitNumber;
+		return this;
 	}
 	public String getStreetAddress() {
 		return streetAddress;
 	}
-	public void setStreetAddress(String streetAddress) {
+	public Address setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
+		return this;
 	}
 	public String getCity() {
 		return city;
 	}
-	public void setCity(String city) {
+	public Address setCity(String city) {
 		this.city = city;
+		return this;
 	}
 	public Province getProvince() {
 		return province;
 	}
-	public void setProvince(Province province) {
+	public Address setProvince(Province province) {
 		this.province = province;
+		return this;
 	}
 	public String getPostalCode() {
 		return postalCode;
 	}
-	public void setPostalCode(String postalCode) {
+	public Address setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+		return this;
 	}
 	
 	@Override
