@@ -17,6 +17,11 @@ public class ProjectController {
 	@Autowired
 	private ProjectControllerService pcService;
 	
+	@RequestMapping("/online")
+	public String online() {
+		return "Working";
+	}
+	
 	@RequestMapping("/AddUser")
 	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE})
 	public String addUser(@RequestBody Account input) {
